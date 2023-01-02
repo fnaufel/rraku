@@ -1,0 +1,11 @@
+Package: rraku
+Title: Add a raku engine to knitr
+Version: 0.0.0.9000
+Authors@R: person("Fernando", "Naufel", ,
+      "fnaufel@gmail.com", role = c("aut", "cre"))
+Description: In RMarkdown code chunks, you can use the raku engine.
+License: GPL (>= 3)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Imports: knitr
