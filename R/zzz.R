@@ -20,15 +20,25 @@
 .onAttach <- function(libname, pkgname) {
 
   knitr::knit_engines$set(
+
     raku = function(options) {
+
       code <- paste(options$code, collapse = '\n')
-      out  <- system2(
-        'raku',
-        c('-e', shQuote(code)),
-        stdout = TRUE
-      )
+
+      if (options$eval) {
+        out  <- system2(
+          'raku',
+          c('-e', shQuote(code)),
+          stdout = TRUE
+        )
+      } else {
+        out <- ''
+      }
+
       knitr::engine_output(options, code, out)
+
     }
+
   )
 
   packageStartupMessage(
