@@ -29,7 +29,8 @@
         out  <- system2(
           'raku',
           c('-e', shQuote(code)),
-          stdout = TRUE
+          stdout = TRUE,
+          stderr = TRUE
         )
       } else {
         out <- ''
